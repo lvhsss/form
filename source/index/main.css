@@ -84,6 +84,11 @@ select {
     background-color: rgba(0, 0, 0, 0.1);
 }
 /* ----------------------------------------------------- */
+.main__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .main_form {
     display: flex;
     justify-content: center;
@@ -140,7 +145,8 @@ form {
 label {
   color: red;
 }
-
-/* ----------------------------------------------------- */
-/* ----------------------home--------------------------- */
-/* ----------------------------------------------------- */
+@media (max-width: 500px) {
+  [class*='__container'] {
+    max-width: 300px;
+  }
+}

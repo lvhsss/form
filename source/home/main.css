@@ -101,3 +101,30 @@ input[type="file"]::before {
     font-weight: 500;
     color: var(--primary-color);
 }
+/* ----------------------------------------------------- */
+.home__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.img {
+    max-width: 300px;
+    margin-bottom: 15%;
+    position: relative;
+}
+.upload {
+    margin-bottom: 10%;
+    position: relative;
+}
+.progress {
+    display: none;
+    height: 5px;
+}
+.progress::-webkit-progress-bar {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+.progress::-webkit-progress-value{
+    background-color: var(--primary-color);
+    border-radius: 0 15px 15px 0;
+}
