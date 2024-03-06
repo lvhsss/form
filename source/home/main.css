@@ -1,5 +1,6 @@
 input[type="file"] {
-
+	width: 100px;
+    height: 52px;
 }
 input[type="file"]::-webkit-file-upload-button {
     visibility: hidden;
