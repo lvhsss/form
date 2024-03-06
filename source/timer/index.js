@@ -49,7 +49,7 @@ function startPreTimer() {
 }
 
 function startMainTimer() {
-    mainTimerTime = 5;
+    mainTimerTime = 60;
     updateMainTimer();
     mainTimerInterval = setInterval(updateMainTimer, 1000);
 }

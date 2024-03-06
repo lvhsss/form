@@ -10,6 +10,8 @@
 form {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .main-title {
     font-family: var(--primary-font);
@@ -20,6 +22,7 @@ form {
 }
 .main-input {
   margin-bottom: 5%;
+  text-align: center;
 }
 .main-but {
     width: 100px;
@@ -28,13 +31,12 @@ form {
     /* ---------------------- */
     font-family: var(--primary-font);
     font-weight: 500;
-    font-size: 16px;
+    font-size: 32px;
     color: var(--primary-color);
 }
 label {
 	font-family: var(--primary-font);
-	color: var(--primary-color);
-	font-weight: 700;
+	color: red;
 }
 @media (max-width: 500px) {
   [class*='__container'] {
