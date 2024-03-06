@@ -78,7 +78,6 @@ document.addEventListener("DOMContentLoaded", function() {
             const img = document.createElement("img");
 
             img.src = URL.createObjectURL(selectedImage);
-            img.alt = "Uploaded Image";
 
             imagePreview.innerHTML = '';
             imagePreview.appendChild(img);
@@ -94,8 +93,6 @@ document.addEventListener("DOMContentLoaded", function() {
     fileInput.addEventListener("input", function(event) {
         if (!event.target.value) {
             selectedImage = null;
-            imagePreview.innerHTML = '';
-            submit.style.display = "none";
         };
     });
 });
