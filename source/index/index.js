@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     document.querySelector(".main-but").addEventListener("click", function(event) {
         event.preventDefault();
 
-        const accessCode = '1';
+        const accessCode = '2008';
 
         const userCode = document.querySelector('.main-input').value;
         const msg = document.querySelector('.msg');

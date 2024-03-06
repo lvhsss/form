@@ -1,0 +1,22 @@
+.timer__section {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+.timer__container {
+    display: flex;
+    flex-direction: column;
+}
+.timer {
+    font-family: var(--primary-font);
+    color: var(--primary-color);
+    font-size: 150px;
+    letter-spacing: 6px;
+    font-weight: 800;
+    opacity: 1;
+}
+.timer._none {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+/* ----------------------------------------------------- */
