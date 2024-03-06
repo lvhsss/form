@@ -14,7 +14,7 @@ input[type="file"]::before {
     /* ---------------------- */
     font-family: var(--primary-font);
     font-weight: 500;
-	font-size: 32px;
+	font-size: 16px !important;
     color: var(--primary-color);
 	z-index: 400;
 }
@@ -45,6 +45,7 @@ input[type="file"]::before {
 .submit {
 	display: none;
     width: 150px;
+	font-size: 16px !important;
 }
 .check {
 	display: none;
