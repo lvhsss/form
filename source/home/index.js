@@ -24,6 +24,7 @@ document.addEventListener("DOMContentLoaded", function() {
             progress += 1;
             progressBar.value = progress;
             progressBar.style.display = "block";
+            
             checking.style.display = "inline-block";
 
             fileInput.classList.add('qw12');
@@ -47,31 +48,30 @@ document.addEventListener("DOMContentLoaded", function() {
             time += 1;
             progressBar.value = time;
             progressBar.style.display = "block";
-
+    
             submitting.style.display = "inline-block";
             fileInput.classList.add('qw12');
-
+    
             if (time >= 100) {
                 clearInterval(timer);
-
+    
                 fileInput.classList.remove('qw12');
                 progressBar.style.display = "none";
                 submitting.style.display = "none";
                 progressBar.value = 0;
-
+    
                 setTimeout(function() {
-
                     main.classList.add('_hidden');
                     check.classList.add('_checked');
-
+            
                     setTimeout(function() {
                         window.location.href = 'timer.html';
-                    }, 300);
-                }, 300);
-                event.preventDefault();
-            };
+                    }, 1000);
+                }, 1000);
+            }
         }, 25);
-    };
+    }
+    
 
     function showImage() {
         if (selectedImage) {

@@ -1,4 +1,8 @@
 const quiz = document.querySelector('.quiz-wrap');
+const submit = document.querySelector('.submit');
+
+const check = document.querySelector('.check');
+const main = document.querySelector('.main');
 
 const correctAnswersInitial = ['2', '5', '1', '4', '3', '6'];
 
@@ -10,15 +14,23 @@ function checkAnswersAndShowNext(event) {
     inputs.forEach((input, index) => {
         if (input.value.toLowerCase() !== correctAnswersInitial[index]) {
             allCorrect = false;
-            input.style.color = 'red';
-        } else {
-            input.style.color = 'green';
         }
     });
     if (allCorrect) {
-        window.location.href += 'text.html';
+        inputs.forEach(input => input.value = '');
+        submit.innerText = 'correct';
+        
+        setTimeout(function() {
+            main.classList.add('_hidden');
+            check.classList.add('_checked');
+
+            setTimeout(function() {
+                window.location.href = 'text.html';
+            }, 1000);
+        }, 1000);
+        event.preventDefault();
     } else {
-        console.log('Some answers are incorrect!');
+        submit.innerText = 'wrong'
     }
 }
 

@@ -10,8 +10,7 @@
 .timer {
     font-family: var(--primary-font);
     color: var(--primary-color);
-    font-size: 150px;
-    letter-spacing: 6px;
+    font-size: 120px;
     font-weight: 800;
     opacity: 1;
 }
@@ -20,3 +19,13 @@
     transition: opacity 1s ease;
 }
 /* ----------------------------------------------------- */
+.again {
+    visibility: hidden;
+}
+.confirm {
+    visibility: hidden;
+}
+._visible {
+    visibility: visible;
+    transition: visibility 1s ease;
+}

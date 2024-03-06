@@ -2,42 +2,77 @@ const again = document.querySelector('.again');
 const confirm = document.querySelector('.confirm');
 const timer = document.querySelector('.timer');
 
-let time = 10;
-let timerInterval;
+const check = document.querySelector('.check');
+const main = document.querySelector('.main');
 
-function updateTimer() {
-    let seconds = time % 60;
-    let minutes = Math.floor(time / 60);
+let mainTimerTime = 60;
+let mainTimerInterval;
+let preTimerTime = 10;
+let preTimerInterval;
 
-    let displayString = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds; // Adjusted to add leading zero if seconds < 10
+function updatePreTimer() {
+    let seconds = preTimerTime % 60;
+    let displayString = (seconds < 10 ? '' : '') + seconds;
 
     timer.textContent = displayString;
-    time--;
+    preTimerTime--;
 
-    if (time < 0) {
-        clearInterval(timerInterval);
-        timer.classList.add('_none');
+    if (preTimerTime < 0) {
+        clearInterval(preTimerInterval);
+
+        startMainTimer();
+    }
+}
+
+function updateMainTimer() {
+    let seconds = mainTimerTime % 60;
+    let minutes = Math.floor(mainTimerTime / 60);
+
+    let displayString = (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+
+    timer.textContent = displayString;
+    mainTimerTime--;
+
+    if (mainTimerTime < 0) {
+        clearInterval(mainTimerInterval);
+
+
         again.classList.add('_visible');
         confirm.classList.add('_visible');
     }
 }
 
-function startNewTimer() {
-    time = 60; // Set time to 60 seconds (1 minute) for the new timer
-    again.classList.remove('_visible');
-    confirm.classList.remove('_visible');
-    updateTimer(); // Start the timer
-    timerInterval = setInterval(updateTimer, 1000);
+function startPreTimer() {
+    preTimerTime = 10;
+    updatePreTimer();
+    preTimerInterval = setInterval(updatePreTimer, 1000);
 }
 
-// Start the initial timer
-startNewTimer();
+function startMainTimer() {
+    mainTimerTime = 5;
+    updateMainTimer();
+    mainTimerInterval = setInterval(updateMainTimer, 1000);
+}
+
+startPreTimer();
 
 again.addEventListener('click', function() {
-    clearInterval(timerInterval); // Stop the current timer
-    startNewTimer(); // Restart the timer
+    clearInterval(mainTimerInterval);
+
+    again.classList.remove('_visible');
+    confirm.classList.remove('_visible');
+
+    startMainTimer();
 });
 
-confirm.addEventListener('click', function() {
-    window.location.href = 'new_page_url'; // Replace 'new_page_url' with the URL you want to redirect to
+confirm.addEventListener('click', function(event) {
+    setTimeout(function() {
+        main.classList.add('_hidden');
+        check.classList.add('_checked');
+
+        setTimeout(function() {
+            window.location.href = 'quiz.html';
+        }, 1000);
+    }, 1000);
+    event.preventDefault();
 });
